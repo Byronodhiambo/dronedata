@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="grid grid-cols-3 gap-4 px-6 py-6">
+      <div>
+        <span
+          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >RPAS TYPE </span
+        >{{flights.0.rpas.rpas_type}}
+      </div>
+      <div>
+        <span
+          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >RPAS REGISTRATION</span
+        >
+        {{flights.0.rpas.rpas_reg}}
+      </div>
+      <div>
+        <span
+          class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >AIRFRAME B/F FROM PREVIOUS LOG</span
+        >
+        {{flights.0.rpas.airframe_bf}}
+      </div>
+    </div>
+
+    <div class="relative shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="py-3 px-6">Flight No</th>
+            <th scope="col" class="py-3 px-6">Date</th>
+            <th scope="col" class="py-3 px-6">Location Dep</th>
+            <th scope="col" class="py-3 px-6">Location Arr</th>
+            <th scope="col" class="py-3 px-6">Flight Type</th>
+            <th scope="col" class="py-3 px-6">Pilot</th>
+            <th scope="col" class="py-3 px-6">Crew</th>
+            <th scope="col" class="py-3 px-6">Dep Time</th>
+            <th scope="col" class="py-3 px-6">Arr Time</th>
+            <th scope="col" class="py-3 px-6">Flight Time</th>
+            <th scope="col" class="py-3 px-6">airframe Hrs</th>
+            <th scope="col" class="py-3 px-6">fuel start(ltrs)</th>
+            <th scope="col" class="py-3 px-6">fuel end(ltrs)</th>
+            <th scope="col" class="py-3 px-6">batt (%)</th>
+            <th scope="col" class="py-3 px-6">signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for flight in flights %}
+          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            <th
+              scope="row"
+              class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{flight.flight_no}}
+            </th>
+            <td class="py-4 px-6">{{flight.date}}</td>
+            <td class="py-4 px-6">{{flight.location_dep}}</td>
+            <td class="py-4 px-6">{{flight.location_arr}}</td>
+            <td class="py-4 px-6">{{flight.flight_type}}</td>
+            <td class="py-4 px-6">{{flight.pilot}}</td>
+            <td class="py-4 px-6">{{flight.crew}}</td>
+            <td class="py-4 px-6">{{flight.dep_time}}</td>
+            <td class="py-4 px-6">{{flight.arr_time}}</td>
+            <td class="py-4 px-6">{{flight.flight_time}}</td>
+            <td class="py-4 px-6">{{flight.airframe_hrs}}</td>
+            <td class="py-4 px-6">{{flight.fuel_start}}</td>
+            <td class="py-4 px-6">{{flight.fuel_end}}</td>
+            <td class="py-4 px-6">{{flight.batt}}</td>
+            <td class="py-4 px-6">{{flight.signature}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
