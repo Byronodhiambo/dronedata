@@ -6,3 +6,4 @@ class Flightsform(ModelForm):
     class Meta:
         model = Flights
         fields = '__all__'
+        

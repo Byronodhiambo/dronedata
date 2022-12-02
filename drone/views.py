@@ -10,15 +10,12 @@ def index(request):
     if request.method == 'POST':
         form = Flightsform(request.POST)
         if form.is_valid():
-            try:
-                form.save
-            except:
-                pass
+            form.save()
+            return render(request, "home.html")
     else:
         form = Flightsform()
     context = {'form':form}
     return render(request, "form.html", context)
-    # return render(request, "home.html")
 
 def save_flight(request):
     

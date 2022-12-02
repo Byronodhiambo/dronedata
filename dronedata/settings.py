@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-cs-860194767488-default.cs-europe-west1-onse.cloudshell.dev']
 ROOT_URLCONF = 'dronedata.urls'
 
 TEMPLATES = [
