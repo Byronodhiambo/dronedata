@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('flightdata/', views.flightdata, name='flightdata'),
-    path('flightdata-list/<str:reg>/', views.flightdata_list, name='flightdata_list'),
+    path('addflight/', views.addflight, name='addflight'),
+    path('rpasflights/<str:reg>/', views.rpasflights, name='rpasflights'),
 ]

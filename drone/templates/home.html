@@ -1,46 +1,8 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div class="isolate bg-white">
-      <div class="px-6 pt-6 lg:px-8">
-        <div>
-          <nav
-            class="flex h-9 items-center justify-between"
-            aria-label="Global"
-          >
-            <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-              <a href="{% url 'index' %}" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img class="h-8" src="{% static 'logo.png' %}" alt="" />
-              </a>
-            </div>
 
-            <div
-              class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12"
-            >
-              <a
-                href="{% url 'flightdata' %}"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Enter Flight</a
-              >
-
-              <a
-                href="{% url 'flightdata_list' %}"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Flight list</a
-              >
-            </div>
-            <div
-              class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end"
-            ></div>
-          </nav>
-        </div>
+{% block content %}
+     
       </div>
       <main>
         <div class="relative px-6 lg:px-8">
@@ -57,21 +19,21 @@
             </p>
             <div class="mt-8 flex gap-x-4 sm:justify-center">
               <a
-                href="{% url 'flightdata' %}"
+                href="{% url 'addflight' %}"
                 class="inline-block rounded-lg bg-rose-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-rose-600 hover:bg-rose-700 hover:ring-rose-700"
               >
                 Enter flights
               </a>
               <a
-                href="{% url 'flightdata_list' %}"
+                href="{% url 'addflight' %}"
                 class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
               >
                 view flights
               </a>
             </div>
           </div>
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
+          </div>
+          </main>
+          
+ 
+          {% endblock content %}
