@@ -22,9 +22,13 @@ def addflight(request):
     return render(request, "form.html", context)
     
 
-def rpasflights(request,reg):
+def flights(request,reg):
     flights = Flights.objects.filter(rpas__rpas_reg=reg)
     return render(request, "table.html", {'flights':flights})
+    
+def rpas(request):
+    rpass = Rpas.objects.all()
+    return render(request, "rpas.html", {'rpass':rpass})
 
 
     
