@@ -8,57 +8,61 @@
   </head>
   <body>
     <div class="isolate bg-white">
-        <div class="px-6 pt-6 lg:px-8">
-          <div>
-            <nav
-              class="flex h-9 items-center justify-between"
-              aria-label="Global"
-            >
-              <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-                <a href="{% url 'index' %}" class="-m-1.5 p-1.5">
-                  <span class="sr-only">Your Company</span>
-                  <img class="h-8" src="{% static 'drone/logo.png' %}" alt="" height="300" width="300"/>
-                </a>
-              </div>
-  
-              <div
-                class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12"
-              >
-                <a
-                  href="{% url 'addflight' %}"
-                  class="font-semibold text-gray-900 hover:text-gray-900"
-                  >Enter Flight</a
-                >
-  
-                <a
-                  href="{% url 'addflight' %}"
-                  class="font-semibold text-gray-900 hover:text-gray-900"
-                  >Flight list</a
-                >
-              </div>
-              <div
-                class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end"
-              ></div>
-            </nav>
-          </div>
-        </div>
-        {% block content %}
-        {% endblock content %}
+      <div class="px-6 pt-6 lg:px-8">
+        <div>
+          <nav
+            class="flex h-9 items-center justify-between"
+            aria-label="Global"
+          >
+            <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
+              <a href="{% url 'index' %}" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img
+                  class="h-8"
+                  src="{% static 'drone/logo.png' %}"
+                  alt=""
+                  height="300"
+                  width="300"
+                />
+              </a>
+            </div>
 
-        <footer class="relative pt-8 pb-6 mt-2">
-            <div class="container mx-auto px-4">
-              <div
-                class="flex flex-wrap items-center md:justify-between justify-center"
+            <div
+              class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12"
+            >
+              <a
+                href="{% url 'addflight' %}"
+                class="font-semibold text-gray-900 hover:text-gray-900"
+                >Enter Flight</a
               >
-                <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-                  <div class="text-sm text-blueGray-500 font-semibold py-1">
-                    Fahari Aviation
-                  </div>
-                </div>
+
+              <a
+                href="{% url 'rpas' %}"
+                class="font-semibold text-gray-900 hover:text-gray-900"
+                >Drones</a
+              >
+            </div>
+            <div
+              class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end"
+            ></div>
+          </nav>
+        </div>
+      </div>
+      {% block content %} {% endblock content %}
+
+      <footer class="relative pt-8 pb-6 mt-2">
+        <div class="container mx-auto px-4">
+          <div
+            class="flex flex-wrap items-center md:justify-between justify-center"
+          >
+            <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+              <div class="text-sm text-blueGray-500 font-semibold py-1">
+                Fahari Aviation
               </div>
             </div>
-          </footer>
+          </div>
         </div>
-    
+      </footer>
+    </div>
   </body>
 </html>
